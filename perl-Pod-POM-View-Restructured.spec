@@ -1,11 +1,12 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Pod
 %define		pnam	POM-View-Restructured
 %include	/usr/lib/rpm/macros.perl
 Summary:	Pod::POM::View::Restructured - View for Pod::POM that outputs reStructuredText
+Summary(pl.UTF-8):	Pod::POM::View::Restructured - widok dla Pod::POM z wyjściem w formacie reStructuredText
 Name:		perl-Pod-POM-View-Restructured
 Version:	1.000002
 Release:	1
@@ -26,15 +27,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This module outputs reStructuredText that is expected to be used with
 Sphinx. Verbatim sections (indented paragraphs) in the POD will be
-output with syntax highlighting for Perl code by default. See /"POD
-commands specifically for reStructuredText" for how to change this for
-a particular block.
+output with syntax highlighting for Perl code by default.
 
-For a list of changes in recent versions, see the documentation for
-Pod::POM::View::Restructured::Changes.
-
-This module can be downloaded from
-http://www.cpan.org/authors/id/D/DO/DOWENS/.
+%description -l pl.UTF-8
+Ten moduł produkuje wyjście w formacie reStructuredText, przeznaczonym
+do użytku ze Sphinksem. Sekcje maszynowe (akapity z wcięciem) w POD są
+wypisywane z domyślbym podświetlaniem składni dla kodu w Perlu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -59,6 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog INSTALL README
 %attr(755,root,root) %{_bindir}/pod2rst
-%{perl_vendorlib}/Pod/POM/View/*.pm
+%{perl_vendorlib}/Pod/POM/View/Restructured.pm
 %{_mandir}/man1/pod2rst.1p*
 %{_mandir}/man3/Pod::POM::View::Restructured.3pm*
