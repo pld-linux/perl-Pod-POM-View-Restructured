@@ -4,7 +4,6 @@
 #
 %define		pdir	Pod
 %define		pnam	POM-View-Restructured
-%include	/usr/lib/rpm/macros.perl
 Summary:	Pod::POM::View::Restructured - View for Pod::POM that outputs reStructuredText
 Summary(pl.UTF-8):	Pod::POM::View::Restructured - widok dla Pod::POM z wyjściem w formacie reStructuredText
 Name:		perl-Pod-POM-View-Restructured
